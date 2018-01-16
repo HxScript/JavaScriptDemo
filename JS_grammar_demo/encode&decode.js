@@ -67,6 +67,25 @@ var lowerCase = function(s) {
 
 // log(lowerCase('abcABC'))
 // log(lowerCase('aADAVSASDVSAbcABZXVVasfdsafadfsafC'))
+var uppercase1 = function(s) {
+    // 初始化一个空字符串
+    var result = ""
+    for (var i = 0; i < s.length; i++) {
+        // 注意, 这个 find 是你要实现的函数
+        var index = find(lower, s[i])
+        // 看看是否找到了
+        if (index > -1) {
+            result += upper[index]
+        } else {
+            // 没找到说明这个字符是大写字符, 直接添加
+            result += s[i]
+        }
+    }
+    return result
+}
+
+
+
 
 
 /*

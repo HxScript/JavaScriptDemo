@@ -33,6 +33,10 @@ table{border-collapse:collapse;border-spacing:0;}
 
 
 /*real css*/
+body {
+	color: white;
+}
+
 .box-quote {
 	text-align:center;
 }
@@ -53,4 +57,16 @@ table{border-collapse:collapse;border-spacing:0;}
 	border-bottom: 10px solid black;
 	border-right: 10px solid black;
 	border-left: 10px solid	black;
+}
+
+.slogan {
+	font-size: 30px;
+}
+
+.down-words {
+	font-size:15px;
+	line-height:25px;
+	letter-spacing:1.5px;
+	text-align: left;
+	margin: 10px 10px
 }
