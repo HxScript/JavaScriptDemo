@@ -36,6 +36,8 @@ function mutation(arr) {
     return result
   }
 
+
+// 原来实际上是有string的内置函数：ToLowerCase()和ToUpCase()
   var lowa = lowerCase(arr[0])
   // console.log(lowa)
   var lowb = lowerCase(arr[1])
