@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn</title>
+	<meta charset="UTF-8">
+	<style>
+		#app {
+			width: 800px;
+			margin: 30px auto;	
+		}
+		#tb {
+			width: 800px;
+			border-collapse:collapse;
+			margin: 30px auto;	
+		}
+		
+		#tb th {
+			background-color: #0094ff;
+			color: white;
+			font-size: 16px;
+			padding: 5px;
+			text-align: center;
+			broder: 1px solid green;
+		}
+
+		tr td {
+			background-color: white;
+			padding: 5px;
+			text-align: center;
+			border: 1px solid;
+		}
+
+
+
+
+	</style>
+	<script src="../vue1026.js"></script>
+</head>
+<body>
+	<div id="app1">
+		<!-- 实现了一组数据的增、删、查 -->
+		<input v-model="id">
+		<input v-model="cname" v-on:keydown.enter="addData">
+		<button v-on:click="addData">添加</button>
+		<input placeholder="请输入筛选内容" v-model="sname">
+		<table id="tb">
+			<tr>
+				<th>编号</th>
+				<th>品牌</th>
+				<th>日期</th>
+				<th>删除</th>
+			</tr> 
+			<tr>
+				<td colspan="4" v-if="list.length ==0">当前列表无数据！</td>
+			</tr>
+			<tr v-for="item of list | filterBy sname in 'name'">
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.ctime | datefmt}}</td>
+				<td>
+					<a href="javascript:void(0)"  v-on:click="delData(item.id)">删除</a>
+				</td>
+			</tr>			
+		</table>
+	</div>
+</body>
+<script>
+	Vue.filter('datefmt', function(time) {
+				var res = ''
+				var hour = time.getHours()
+				var minitue = time.getMinutes()
+				var second = time.getSeconds()
+				res = `${hour}时${minitue}分${second}秒`
+				return res
+	});
+
+	new Vue1({
+		el: '#app1',
+		data: {
+			list:[
+				{id:1,name:'奔驰',ctime:new Date},
+				{id:2,name:'大众',ctime:new Date},
+				{id:3,name:'宝马',ctime:new Date},
+				{id:4,name:'奥迪',ctime:new Date}
+			],
+			id: 0,
+			cname: '',
+			sname: ''
+		},
+		methods: {
+			addData: function() {
+				this.list.push({id:this.id, name:this.cname,ctime:new Date})
+				this.id = 0
+				this.cname = ''
+			},
+			delData: function(id) {
+				// make a confirm
+				if (!confirm('是否删除数据？')) {
+					return 
+				}
+
+				//find list Index   return中，item.id 是指 findIndex函数遍历时传入的第一个参数即list本身的id。
+				// 后一个id，也就是调用delData时传入点击该函数的id
+				var index = this.list.findIndex(function(item){return item.id == id})
+				//splice
+				this.list.splice(index,1)
+			}
+		}
+
+	});
+
+</script>
+</html>
