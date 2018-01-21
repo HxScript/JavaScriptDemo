@@ -28,4 +28,4 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3) //应该返回 [1, 1].
 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) //应该返回 [1, 5, 1].
 destroyer([3, 5, 1, 2, 2], 2, 3, 5) //应该返回 [1].
 destroyer([2, 3, 2, 3], 2, 3) //应该返回 [].
-destroyer(["tree", "hamburger", 53], "tree", 53) //应该返回 ["hamburger"].
+destroyer(["tree", "hamburger", 53], "tree", 53) //应该返回 ["hamburger"]

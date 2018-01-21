@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>斗鱼主播在线情况查看</title>
+	<script src="js/vue221.js"></script>
+	<script src="js/vue-resource121.js"></script>
+	<style type="text/css">
+		
+		#app {
+			width: 300px;
+
+			border: 3px solid black;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="app">
+		<span> {{list | json}}</span>
+		<button @click = "getdata"> get 请求</button>
+	</div>
+</body>
+
+	<script>
+var vm = new Vue({
+	el :'#app',
+	data: {
+		list:null
+	}
+	methods: {
+		getData:function(){
+			var url = 'http://open.douyucdn.cn/api/RoomApi/room/2371789'
+
+			this.$http.get(url)
+			.then(function(response){
+				this.list = response;
+
+			})
+		}
+	}
+})
+
+
+	</script>
+</html>

@@ -1,0 +1,15 @@
+// url:http://open.douyucdn.cn/api/RoomApi/room/2371789
+// method:GET
+// 2018-1-20
+
+{
+  "error": 0,
+  "data": {
+    "cate_name": "英雄联盟",
+    "room_status": "2",
+    "owner_name": "阿冷aleng丶",
+    "avatar": "https://apic.douyucdn.cn/upload/avanew/face/201710/27/15/30bfcb5821ced2bb6898fedc8ca8f38e_big.jpg",
+    "online": 0,
+    "hn": 0,
+  }
+}
