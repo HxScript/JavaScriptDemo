@@ -8,7 +8,7 @@ var server = http.createServer(function(req,res) {
 	}
 	res.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"})
 	fs.readdir("./filetest/", function(err,files){
-		var folder = [];
+		var folder = []
 
 		(function iterator(i) {
 			if(i == files.length) {
