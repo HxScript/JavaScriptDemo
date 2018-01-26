@@ -1,0 +1,84 @@
+<!DOCTYPE html> <html lang=zh-cmn-Hans> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+<title>演讲者视图</title> 
+
+  <link rel="icon" href="https://s5.ssl.qhimg.com/static/7cd9cb73bd4763d8.ico"> <link rel="stylesheet" type="text/css" href="static/3f8a3fe36bcd0df9/static/css/global.css"> <link rel="manifest" href="https://s.ssl.qhres.com/static/76422c850755bca/www/static/manifest.json" /> <meta name="mobile-web-app-capable" content="yes"> <meta name="application-name" content="声享"> <meta name="msapplication-starturl" content="https://ppt.baomitu.com"> 
+   <!-- Chrome, Firefox OS and Opera --><meta name="theme-color" content="#444444"> <!-- Windows Phone --><meta name="msapplication-navbutton-color" content="#444444"> 
+   <!-- iOS Safari --><meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-title" content="声享"> <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <link rel="apple-touch-icon" href="https://p1.ssl.qhimg.com/t01a54d9106629dda0e.png"> <link rel="apple-touch-startup-image" href="https://p1.ssl.qhimg.com/t01a54d9106629dda0e.png"> 
+<link rel="stylesheet" type="text/css" href="https://s.ssl.qhres.com/static/ee0c72616f54bc8/view/slide/index_speaker.css"> 
+
+  <script>
+    // 只有当支持navigation timing API时，才进行打点
+    if(window.performance && performance.timing) {
+      // 该对象用于保存自定义的性能打点数据，未使用user timing api，以支持更多浏览器
+      window.USER_TIMING = {
+        headTime: performance.now ? performance.now() : (Date.now() - performance.timing.navigationStart)
+      };
+    }
+  </script> </head> <body > 
+<div id="current-slide"></div> <div id="upcoming-slide"><span class="label">下一幕:</span></div> <div id="speaker-controls"> <div class="speaker-controls-time"> <h4 class="label">演讲时长</h4> <div class="clock"> <span class="clock-value">上午 0:00</span> </div> <div class="timer"> <span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span> <i class="icon icon-play"></i> <i class="icon icon-pause"></i> <i class="icon icon-ccw"></i> </div> <div class="clear"></div> </div> <div class="speaker-controls-notes hidden"> <h4 class="label">备注</h4> <div class="value"></div> </div> </div> 
+  <div class="BrowserSuggest" id="BrowserSuggest"> <div class="BrowserSuggest-bg"></div> <div class="BrowserSuggest-dialog"> <h2>HI, 亲爱的用户</h2> <img src="data:image/png;base64,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" alt=""> <p> 为获得声享编辑器的<span class="BrowserSuggest-highlight">最佳体验</span>，建议使用<br /> 360安全浏览器<a target="blank" href="http://se.360.cn/v6/help/help5.html">极速模式<sup>?</sup></a><br />或最新版Chrome浏览器
+        </p> <a target="blank" href="http://se.360.cn/" class="Button Button--primary">下载360浏览器</a> <a target="blank" href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html" class="Button Button--primary">下载最新版Chrome</a> </div> </div> <script>
+(function() {
+    var ua = navigator.userAgent;
+    var matchIE = ua.match(/MSIE\s+(\d+)/);
+
+    if(matchIE !== null) {
+        var version = parseInt(matchIE[1]);
+        if(version <= 9) {
+            showSuggest();
+        }
+    }
+
+    function showSuggest() {
+        document.getElementById('BrowserSuggest').className += ' BrowserSuggest--show';
+    }
+
+})();
+</script>
+
+  
+  <script type="text/javascript" id="server_data">
+    try {
+      window.SD = {
+        
+        
+        
+        myself: {
+          
+            
+              "user_name": '荒川',
+            
+          
+            
+              "user_email": '',
+            
+          
+            
+              "user_desc": '',
+            
+          
+            
+              "user_avatar": 'https://p0.ssl.qhimg.com/t0114e2e06a632fb8cf.jpg',
+            
+          
+        },
+        
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  </script> 
+
+  <script>
+    window.SD = window.SD || {}
+  </script> 
+  <script type="text/javascript" src="static/7868012c6d359073/static/js/runtime.js"></script> <script type="text/javascript" src="static/7795d2323d6b69a2/static/js/common.js"></script> <script type="text/javascript" src="static/7b45e43a6edc59f0/static/js/global.js"></script> 
+
+  
+<script type="text/javascript" src="https://s.ssl.qhres.com/static/7f0782a50f96fdda/view/slide/index_speaker.js"></script> 
+
+  
+  <script src="static/1cc9966316db6ad9/monitor.js"></script> <script>
+    monitor.setProject('baomitu').getTrack().getClickAndKeydown();
+  </script> 
+</body> </html>
