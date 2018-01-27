@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>how is the weather bro?</title>
+	<script src="../../vue221.js"></script>
+	<script src="../../vue-resource121.js"></script>	
+	<style type="text/css">
+		body {
+			background-color: rgb(134,185,224);
+			color: #fff;
+    		font-family: '微软雅黑', sans-serif;
+    		font-weight: 300;
+    		position: relative;
+    		letter-spacing: 0.05rem;
+    		line-height: 1.5;
+    		text-align: center;	
+		}
+		
+		.wrapper {
+			width: 100%;
+		}
+		
+		.location {
+			font-size: 2em;
+    		font-weight: 700;
+    		margin: 0;
+		}
+		#future > .container:not(:last-child) {
+			border-right:1px solid rgba(255,255,255,0.25);
+		}
+
+		.container {
+			float: left;
+			width: 33.333%
+		}
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click="getjsonp"></button>
+		<div class="wrapper current">
+			<h1 class="location">{{result.today.city}}</h1>
+			<h2 class="date">{{result.today.date_y}}{{result.today.week}}</h2>
+			<div class="weatherIcon">这是一张图片</div>
+			<p class="temp">{{result.today.temperature}}</p>
+			<p class="conditions">{{result.today.weather}}</p>
+		</div>
+		<div class="wrapper future">
+			<div class="container" v-for = "item of result.future">
+				<h3 class="day">{{item.date | changeday}}</h3>
+				<div class="weatherIcon">这里是一张图片</div>
+				<p class="temp">{{item.temperature}}</p>
+				<p class="conditions">{{item.weather}}</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script>
+	new Vue({
+		el:'#app',
+		filters: {
+			changeday: function(string) {
+				var year = string.slice(0,4)
+				var month = string.slice(4,6)
+				var day = string.slice(6,8)
+				var newString = `${year}年${month}月${day}日`
+
+				return newString
+			}
+		},
+
+		data:{
+			result:{
+				"today":{
+					"temperature":"温度",
+					"weather":"天气",		
+					"city":"哪个城市",
+					"date_y":"2018年01月21日",
+					"week":"周几啦",
+				},
+				"future":{
+					"day_20180121":{
+						"temperature":"0℃~8℃",
+						"weather":"小雨转多云",
+						"weather_id":{
+							"fa":"07",
+							"fb":"01"
+						},
+						"wind":"西风微风",
+						"week":"星期日",
+						"date":"20180121"				
+					},			
+					"day_20180122":{
+						"temperature":"0℃~10℃",
+						"weather":"多云",
+						"weather_id":{
+							"fa":"01",
+							"fb":"01"
+						},
+						"wind":"东风微风",
+						"week":"星期一",
+						"date":"20180122"
+					},
+					"day_20180123":{
+						"temperature":"1℃~8℃",
+						"weather":"阴转小雨",
+						"weather_id":{
+							"fa":"02",
+							"fb":"07"
+						},
+						"wind":"东北风微风",
+						"week":"星期二",
+						"date":"20180123"
+					}
+				}
+			},
+			ip:'58.48.110.174',
+		},
+		methods:{
+			getjsonp:function(){
+				var api = "http://v.juhe.cn/weather/ip?format=1"
+				var appKey = "&key=1c3cd4a676086913f149c5115d437ad7&ip="
+				var url = api + appKey + this.ip
+				console.log(url)
+				this.$http.jsonp(url)
+				.then(function(response){
+					this.result = response.body.result;
+				})
+			},
+			getIp:function(){
+				this.$http.jsonp("http://api.k780.com/?app=ip.local&appkey=10003&format=json")
+				.then(function(response){
+					this.ip = response.body
+				})
+			}
+		},
+		created:function(){
+			this.getjsonp();
+			console.log(this.result.future.day_20180123.date)
+		}
+	})
+
+
+</script>
+
+</html>
