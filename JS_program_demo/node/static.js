@@ -35,7 +35,7 @@ var server = http.createServer(function(req,res) {
 		console.log(ty)
 		if (err) {
 			fs.readFile("./static/404.html",function(err,data) {
-				res.writeHead(404,{"Content-Type":ty + ";chars et=UTF-8"})
+				res.writeHead(404,{"Content-Type":ty + ";charset=UTF-8"})
 				// console.log(contentType)
 				res.end(data)
 			})
