@@ -3,4 +3,6 @@ exports.showIndex = function(req,res) {
   res.send("我是首页")
 }
 
-// exports.show
+// exports.showAlbum = function(req,res) {
+//   res.send("相册：" + req.parems.albumName)
+// }

@@ -7,7 +7,8 @@ var router = require("./controller/router.js")
 app.set("view emgine","ejs")
 
 // 提供静态服务
-app.use(express.static("./pubic"))
-app.get("/",router.showIndex)
+app.use('/static', express.static('public'));
 
+app.get("/", router.showIndex)
+app.get("/:albumName", router.showAlbum)
 app.listen(3000)
