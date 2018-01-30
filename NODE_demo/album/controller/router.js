@@ -12,5 +12,10 @@ exports.showIndex = function(req,res) {
 
 
 exports.showAlbum = function(req,res) {
-  res.send("相册：" + req.params.albumName)
+  var albumName = req.params.albumName
+  // res.send("相册：" + albumName)
+  res.render("album",{
+    "albumName":albumName,
+    "images":["1.jpg","2.jpg","3.jpg"]
+  })
 }
