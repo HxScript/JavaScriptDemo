@@ -12,10 +12,17 @@ exports.showIndex = function(req,res) {
 
 
 exports.showAlbum = function(req,res) {
+  //遍历相册里所有图片
   var albumName = req.params.albumName
   // res.send("相册：" + albumName)
-  res.render("album",{
-    "albumName":albumName,
-    "images":["1.jpg","2.jpg","3.jpg"]
+  file.getAllImagesByAlbumName(albumName, function(err,imagesArr) {
+    console.log(imagesArr)
+    if (err) {
+      res.render("404")
+    }
+    res.render("album", {
+      "albumName":albumName,
+      "images":imagesArr
+    })
   })
 }

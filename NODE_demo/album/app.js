@@ -9,6 +9,9 @@ app.set("view engine","ejs")
 
 // 提供静态服务
 app.use('/static', express.static('public'));
+app.use(express.static('uploads'));
+
+app.get("/favicon.ico",function() {return console.log("ico")})
 
 app.get("/", router.showIndex)
 app.get("/:albumName", router.showAlbum)
