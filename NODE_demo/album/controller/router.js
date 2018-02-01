@@ -1,5 +1,7 @@
 // Copyright (c) 2018 by HxScript. All Rights Reserved.
 var file = require("../models/file.js")
+var formidable = require("formidable")
+var util = require('util');
 
 exports.showIndex = function(req,res) {
   file.getAllAlbums(function(allAlbums) {
@@ -25,4 +27,25 @@ exports.showAlbum = function(req,res) {
       "images":imagesArr
     })
   })
+}
+
+
+exports.uploadPhoto = function(req,res) {
+  file.getAllAlbums(function(allAlbums) {
+    res.render("form",{
+      "albums":allAlbums
+    })
+  })
+}
+
+exports.doPost = function(req,res) {
+    // parse a file upload
+    var form = new formidable.IncomingForm();
+
+    form.parse(req, function(err, fields, files) {
+      res.writeHead(200, {'content-type': 'text/plain'});
+      res.write('received upload:\n\n');
+      if(err){console.log(err)}
+      res.end(util.inspect({fields: fields, files: files}));
+    });
 }

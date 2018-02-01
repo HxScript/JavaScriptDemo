@@ -14,6 +14,8 @@ app.use(express.static('uploads'));
 app.get("/favicon.ico",function() {return console.log("ico")})
 
 app.get("/", router.showIndex)
+app.get("/upload", router.uploadPhoto)
+app.post("/upload", router.doPost)
 app.get("/:albumName", router.showAlbum)
 app.use(function(req,res) {
   res.render("404")
