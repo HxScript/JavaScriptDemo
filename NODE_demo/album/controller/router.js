@@ -2,6 +2,10 @@
 var file = require("../models/file.js")
 var formidable = require("formidable")
 var util = require('util');
+var path = require("path")
+var fs = require("fs")
+var sd = require('silly-datetime');
+
 
 exports.showIndex = function(req,res) {
   file.getAllAlbums(function(allAlbums) {
@@ -41,11 +45,25 @@ exports.uploadPhoto = function(req,res) {
 exports.doPost = function(req,res) {
     // parse a file upload
     var form = new formidable.IncomingForm();
-
-    form.parse(req, function(err, fields, files) {
-      res.writeHead(200, {'content-type': 'text/plain'});
-      res.write('received upload:\n\n');
-      if(err){console.log(err)}
-      res.end(util.inspect({fields: fields, files: files}));
+    form.uploadDir = __dirname + "/../"+ "uploads/";
+    form.parse(req, function(err, fields, files, next) {
+      if(err) {
+          next()
+        return;
+      }
+      var randNum = parseInt(Math.random() * 899 +100)
+      var newname = sd.format(new Date(), 'YYYYMMDDHHmmss')
+      var extname = path.extname(files.photos.name)
+      var oldpath = files.photos.path
+      var newpath = form.uploadDir + fields.folder +"/" + newname + randNum + extname;
+      // console.log(oldpath,newpath)
+      fs.rename(oldpath, newpath, function(err) {
+        if (err) {
+          res.send("失败")
+          return
+        }
+      })
+      console.log(newpath)
+      res.render("ok")
     });
 }
