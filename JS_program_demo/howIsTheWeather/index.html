@@ -121,6 +121,8 @@
 		},
 		methods:{
 			getjsonp:function(){
+
+				//http://v.juhe.cn/weather/ip?format=1&key=1c3cd4a676086913f149c5115d437ad7&ip=58.48.110.174
 				var api = "http://v.juhe.cn/weather/ip?format=1"
 				var appKey = "&key=1c3cd4a676086913f149c5115d437ad7&ip="
 				var url = api + appKey + this.ip
@@ -138,7 +140,9 @@
 			}
 		},
 		created:function(){
+			
 			this.getjsonp();
+
 			console.log(this.result.future.day_20180123.date)
 		}
 	})

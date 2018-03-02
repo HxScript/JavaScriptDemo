@@ -8,7 +8,9 @@ var server = http.createServer(function(req,res) {
 	}
 	res.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"})
 	fs.readdir("./filetest/", function(err,files){
-		var folder = []
+		//在这里发现了一个必须要加分号的情况！
+		//即立即执行的匿名函数前，必须要加分号。
+		var folder = [];
 
 		(function iterator(i) {
 			if(i == files.length) {

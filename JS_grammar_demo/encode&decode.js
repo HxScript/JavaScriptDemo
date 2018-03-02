@@ -1,9 +1,19 @@
 //some function about dispose string.
 
-var log = function() {
-	return console.log.apply(console, arguments)
-}
 
+// try 出 error后，（老牌opera浏览器会遇到的问题），再error后，最后的降级。 直接用alert。  （《js忍者秘籍》） 2018-2-21
+var log = function() {
+	try {
+	return console.log.apply(console, arguments)
+	}
+	catch(e) {
+		return opera.postError.apply(opera, arguments)
+	}
+	catch(e) {
+		alert(Array.prototype.join.call(arguments, " "))
+	}
+}
+// 即assert(condition, message) 函数   （《js忍者秘籍》） 2018-2-21
 var ensure = function(condition, message) {
 	if (!condition) {
 		log('*** 测试失败:', message)
