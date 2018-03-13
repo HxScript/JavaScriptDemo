@@ -1,30 +1,331 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>HxScript的个人网站</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
 
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- SEO keywords -->
+  <meta name="keywords" content="hxscript, demo"
+  />
+
+  <title>hxscript的拙物</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
+
+
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+
+  <script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery.isotope.js"></script>
+  <script type="text/javascript" src="js/wow.js"></script>
+  <script type="text/javascript" src="js/classie.js"></script>
+  <script src="contactform/contactform.js"></script>
 </head>
+
+
+
+
 <body>
-    <header>
+  <!--header-start-->
+  <header class="header" id="header">
+    <div class="container">
+      <figure class="logo animated fadeInDown delay-07s">
+        <a href="#">
+          <img src="img/logo_noBG_green.png" alt="">
+        </a>
+      </figure>
+      <h1 class="animated fadeInDown delay-07s">HxSript</h1>
+      <ul class="we-create animated fadeInUp delay-1s">
+        <li>都是笨拙不堪的小玩意。</li>
+        <br>
+        <li>展示了一个不务正业的大学生，到底做了什么</li>
+      </ul>
+      <a class="link animated fadeInUp delay-1s servicelink" href="http://hxscript.cn">访问我的blog</a>
+    </div>
+  </header>
+  <!--header-end-->
 
-    </header>	
 
-	<main>
-	<div class="site-wrapper">
-		<div class=".container-fluid">
-			<div class="row">
-				<div class="col-md-6">.col-md-6</div>
-				<div class="col-md-6">.col-md-6</div>
-			</div>
-		</div>
-	</div>
+  <!--nav-start-->
+  <nav class="main-nav-outer" id="test">
+    <div class="container">
+      <ul class="main-nav">
+        <li>
+          <a href="#demo">产品原型</a>
+        </li>
+        <li>
+          <a href="#download">前端demo</a>
+        </li>
+        <li>
+          <a href="#team">平面设计</a>
+        </li>
+        <li>
+          <a href="#team">原创视频</a>
+        </li>
+      </ul>
+      <a class="res-nav_click" href="#">
+        <i class="fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  <!--nav-end-->
 
-	</main>
 
 
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!--demo-section-start-->
+  <section class="main-section" id="demo">
+    <div class="container">
+      <h2>产品原型</h2>
+      <h6>Prototype faster. Start building quicker.</h6>
+      <br>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
+
+          <!-- __________ Something -->
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-code"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Streamline your workflow</h3>
+              <p>Expedite your preliminary stage for new projects or inject into an existing one.</p>
+            </div>
+          </div>
+
+          <!-- Web Development  -->
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa-gear"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Intuitive Prototyping Design</h3>
+              <p>Drag and drop your components to simpify your prototyping process .</p>
+            </div>
+          </div>
+
+          <!-- Cross-Platform Compatibility -->
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Cross-Platform Compatibility</h3>
+              <p>Use React Primer across (most) operating systems. Check the
+                <a href="#download">download</a> section.</p>
+            </div>
+          </div>
+
+          <!-- Github bullet point -->
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Contribute on Github</h3>
+              <a href="https://github.com/ReactPrimer/ReactPrimer">https://github.com/ReactPrimer/ReactPrimer</a>
+            </div>
+          </div>
+        </div>
+        <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+          <img src="img/demo_15mb.gif" alt="">
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!--demo-section-end-->
+
+
+
+  <!-- download-section-begin -->
+  <section class="main-section paddind" id="download">
+    <div class="container">
+      <h2 style="color:white">前端demo</h2>
+      <h6 class="dl">Version 1.0 now available for download:</h6>
+      <!-- <div class="portfolioFilter"> -->
+      <ul class="Portfolio-nav wow fadeIn delay-02s">
+        <li>
+          <a href="#">
+			<img src="img/demo1.jpg" alt="2017SpringRecruit">
+            <i class="fa fa-windows" aria-hidden="true"></i>&nbsp;&nbsp;2017点石春招前端页面(仅适配移动端)</a>
+        </li>
+        <li>
+          <a href="https://github.com/ReactPrimer/ReactPrimer/releases/download/1.0.0/ReactPrimer.dmg">
+            <i class="fa fa-apple" aria-hidden="true"></i>&nbsp;&nbsp; MacOS</a>
+        </li>
+        <li>
+          <a href="https://github.com/ReactPrimer/ReactPrimer/releases/download/1.0.0/React-Primer_1.0.0_amd64.deb">
+            <i class="fa fa-linux" aria-hidden="true"></i>&nbsp;&nbsp;Linux</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </section>
+  <!-- download-section-End -->
+
+
+
+  <!-- team-section-begin -->
+  <section class="main-section team" id="team">
+    <!--main-section team-start-->
+    <div class="container">
+      <h2>平面设计</h2>
+      <h6>在环保盒子做的几张海报</h6>
+	  <div class="Portfolio-nav wow fadeIn delay-02s animated row">
+		  <div class="col-md-4">
+		  	<img src="img/design1.jpg" alt="2017SpringRecruit">
+		  	<i class="fa fa-windows" aria-hidden="true"></i>日常推广海报
+          </div>
+		  <div class="col-md-4">
+			<img src="img/design2.jpg" alt="2017SpringRecruit">
+			<i class="fa fa-windows" aria-hidden="true"></i>日常推广海报
+          </div>
+		  <div class="col-md-4">
+			<img src="img/design3.jpg" alt="2017SpringRecruit">
+			<i class="fa fa-windows" aria-hidden="true"></i>正式版推广宣传卡正面
+          </div>
+		  <div class="col-md-4">
+			<img src="img/design4.jpg" alt="2017SpringRecruit">
+			<i class="fa fa-windows" aria-hidden="true"></i>正式版推广宣传卡反面，含操作流程
+          </div>
+		  <div class="col-md-4">
+			<img src="img/design5.jpg" alt="2017SpringRecruit">
+			<i class="fa fa-windows" aria-hidden="true"></i>2015年5月，为流浪猫做窝活动
+          </div>
+        </div>
+  </section>
+  <!-- team-section-end -->
+
+  <!-- download-section-begin -->
+  <section class="main-section paddind" id="download">
+    <div class="container">
+      <h2 style="color:white">原创视频</h2>
+      <h6 class="dl">光与影，我喜欢用镜头记录生活。</h6>
+
+<iframe frameborder="0" width="100%" height="100%" src="https://v.qq.com/iframe/player.html?vid=d0320ruudl0&tiny=0&auto=0" allowfullscreen></iframe>
+        作品：中国地质大学（武汉）：鸟瞰地大，全网播放超万。
+    </div>
+  </section>
+  <!-- download-section-End -->
+
+  <!--Footer-begin-->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="#">
+          <img src="img/logo_noBG_green.png" alt="">
+        </a>
+      </div>
+      <span class="copyright">Copyright &copy; 2017 React Primer. All Rights Reserved</span>
+      <div class="credits">
+
+      </div>
+    </div>
+  </footer>
+  <!--Footer-end-->
+
+
+
+
+  <!-- --------------------------------------------------------------------- -->
+
+  <script type="text/javascript">
+    $(document).ready(function (e) {
+      $('#test').scrollToFixed();
+      $('.res-nav_click').click(function () {
+        $('.main-nav').slideToggle();
+        return false
+
+      });
+
+    });
+  </script>
+
+  <script>
+    wow = new WOW({
+      animateClass: 'animated',
+      offset: 100
+    });
+    wow.init();
+  </script>
+
+
+  <script type="text/javascript">
+    $(window).load(function () {
+
+      $('.main-nav li a, .servicelink').bind('click', function (event) {
+        var $anchor = $(this);
+
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top - 102
+        }, 1500, 'easeInOutExpo');
+				/*
+				if you don't want to use the easing effects:
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000);
+				*/
+        if ($(window).width() < 768) {
+          $('.main-nav').hide();
+        }
+        event.preventDefault();
+      });
+    })
+  </script>
+
+  <script type="text/javascript">
+    $(window).load(function () {
+
+
+      var $container = $('.portfolioContainer'),
+        $body = $('body'),
+        colW = 375,
+        columns = null;
+
+
+      $container.isotope({
+        // disable window resizing
+        resizable: true,
+        masonry: {
+          columnWidth: colW
+        }
+      });
+
+      $(window).smartresize(function () {
+        // check if columns has changed
+        var currentColumns = Math.floor(($body.width() - 30) / colW);
+        if (currentColumns !== columns) {
+          // set new column count
+          columns = currentColumns;
+          // apply width to container manually, then trigger relayout
+          $container.width(columns * colW)
+            .isotope('reLayout');
+        }
+
+      }).smartresize(); // trigger resize to set container width
+      $('.portfolioFilter a').click(function () {
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+
+          filter: selector,
+        });
+        return false;
+      });
+
+    });
+  </script>
+
 </body>
+
 </html>

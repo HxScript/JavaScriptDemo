@@ -1,3 +1,11 @@
+/*
+* @Author: hxscript
+* @Date:   2018-01-07 19:53:12
+* @Last Modified by:   hxscript
+* @Last Modified time: 2018-03-13 19:41:07
+*/
+
+
 //写一个log函数用于测试
 var log = function() {
 	console.log.apply(console, arguments)

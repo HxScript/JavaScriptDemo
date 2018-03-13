@@ -53,3 +53,13 @@ a, ins {
 .todo-content {
 	display: inline-block;
 }
+
+.showgit {
+    position: absolute;
+    bottom: 50px;
+}
+
+.showgit>a {
+    color: #1bb38e;
+    font-size: 30px;
+}
